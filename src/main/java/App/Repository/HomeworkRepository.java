@@ -9,6 +9,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public interface HomeworkRepository extends JpaRepository<Homework, Integer> {
-//    @Query(value = "SELECT * FROM Homework where userId=:userId AND subjectId=:subjectId")
-//    public List<Homework> getHomeworkByUserandSubjectId(@Param("userId") int userId, @Param("subjectId") int subjectId);
+    @Query("FROM Homework WHERE userId= :userId AND subjectId= :subjectId")
+    public List<Homework> getHomeworkByUserandSubjectId(@Param("userId") int userId, @Param("subjectId") int subjectId);
 }

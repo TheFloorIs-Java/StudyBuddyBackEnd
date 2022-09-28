@@ -21,8 +21,11 @@ public class HomeworkService {
         hr.save(item);
     }
 
-//    public List<Homework> getHomeworkByUserAndSubjectId(int userId,int subjectId){
-//        return hr.getHomeworkByUserandSubjectId(userId,subjectId);
-//    }
+    public List<Homework> getHomeworkByUserAndSubjectId(int userId,int subjectId){
+        return hr.getHomeworkByUserandSubjectId(userId,subjectId);
+    }
+    public void deleteHomeworkItem(int hwId){
+        hr.deleteById(hwId);
+    }
 
 }
