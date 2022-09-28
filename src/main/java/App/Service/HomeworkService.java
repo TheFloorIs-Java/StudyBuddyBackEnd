@@ -4,10 +4,12 @@ import App.Model.Homework;
 import App.Repository.HomeworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
 @Component
+@CrossOrigin
 public class HomeworkService {
     HomeworkRepository hr;
     @Autowired
