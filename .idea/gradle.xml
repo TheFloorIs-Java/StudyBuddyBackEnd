@@ -6,7 +6,10 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
         <option name="gradleHome" value="/usr/local/Cellar/gradle/7.5.1/libexec" />
+=======
+>>>>>>> 5d07bb6 (updated homework and user)
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
