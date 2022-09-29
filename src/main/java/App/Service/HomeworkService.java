@@ -24,7 +24,7 @@ public class HomeworkService {
     }
 
     public List<Homework> getHomeworkByUserAndSubjectId(int userId,int subjectId){
-        return hr.getHomeworkByUserandSubjectId(userId,subjectId);
+        return hr.findByUserIdAndSubjectId(userId,subjectId);
     }
     public void deleteHomeworkItem(int hwId){
         hr.deleteById(hwId);
