@@ -7,7 +7,11 @@
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option name="gradleHome" value="$USER_HOME$/Downloads/gradle-7.5.1-bin/gradle-7.5.1" />
+=======
+        <option name="gradleHome" value="$USER_HOME$/Gradle/gradle-7.5.1" />
+>>>>>>> 804d7225f760e1a44f8b9d889665ed7f6327bbf8
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
