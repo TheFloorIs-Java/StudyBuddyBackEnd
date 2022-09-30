@@ -10,4 +10,6 @@ import java.util.List;
 public interface CompleteRepository extends JpaRepository<Complete, Integer> {
     @Query("FROM Complete WHERE userId= :userId AND subjectId= :subjectId")
     public List<Complete> getHwCompletedByUserAndSubjectId(@Param("userId") int userId, @Param("subjectId") int subjectId);
+
+
 }

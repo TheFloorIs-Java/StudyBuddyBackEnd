@@ -21,7 +21,6 @@ public class UserService {
         return ur.findAll();
     }
     public void addUser(Users u){
-        System.out.println(u.toString());
         ur.save(u);
     }
 }

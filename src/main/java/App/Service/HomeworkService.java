@@ -1,6 +1,8 @@
 package App.Service;
 
+import App.Model.Complete;
 import App.Model.Homework;
+import App.Repository.CompleteRepository;
 import App.Repository.HomeworkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,8 +14,10 @@ import java.util.List;
 @CrossOrigin
 public class HomeworkService {
     HomeworkRepository hr;
+    CompleteRepository cr;
     @Autowired
-    public HomeworkService(HomeworkRepository hr){
+    public HomeworkService(HomeworkRepository hr, CompleteRepository cr){
+        this.cr =cr;
         this.hr = hr;
     }
     public List<Homework> getAllHomeworks(){
@@ -24,10 +28,20 @@ public class HomeworkService {
     }
 
     public List<Homework> getHomeworkByUserAndSubjectId(int userId,int subjectId){
-        return hr.getHomeworkByUserandSubjectId(userId,subjectId);
+        return hr.findByUserIdAndSubjectId(userId,subjectId);
     }
     public void deleteHomeworkItem(int hwId){
-        hr.deleteById(hwId);
+       Homework hw = hr.findByHwId(hwId);
+       Complete c = new Complete();
+       c.completeItem=hw.getHwItem();
+       c.userId=hw.getUserId();
+       c.subjectId = hw.getSubjectId();
+       cr.save(c);
+       hr.deleteById(hwId);
+    }
+
+    public Homework getHwById(int id){
+        return hr.findByHwId(id);
     }
 
 }
