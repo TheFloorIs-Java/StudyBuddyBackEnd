@@ -23,4 +23,5 @@ public class Complete {
     public int subjectId;
     @Column
     public String completeItem;
+
 }

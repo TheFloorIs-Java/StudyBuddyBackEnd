@@ -35,4 +35,10 @@ public class HomeworkController {
         hs.deleteHomeworkItem(itemId);
     }
 
+    @GetMapping("homework/id/{itemId}")
+    public Homework HwByItemId(@PathVariable int itemId){
+        return hs.getHwById(itemId);
+    }
+
+
 }

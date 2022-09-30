@@ -25,11 +25,11 @@ public class SubjectService {
     }
 
     public Subjects getSubjectByName(String name){
-        return sr.findBySubjectNameIs(name);
+        return sr.findBySubjectName(name);
     }
 
     public Subjects getSubjectById(int id){
-        return sr.findById(id);
+        return sr.findBySubjectId(id);
     }
 
 
