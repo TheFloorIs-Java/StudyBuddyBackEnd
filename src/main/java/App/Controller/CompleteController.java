@@ -13,21 +13,29 @@ import java.util.List;
 @CrossOrigin
 public class CompleteController {
     CompleteService cs;
+
     //@autowired
     // automatically finds the most appropriate bean and injects into this class.
     @Autowired
-    public CompleteController(CompleteService cs)
-    {this.cs = cs;
+    public CompleteController(CompleteService cs) {
+        this.cs = cs;
     }
+
     @GetMapping("complete")
-    public List<Complete> getAllHwCompleted(){
+    public List<Complete> getAllHwCompleted() {
         return cs.getAllHwCompleted();
     }
+
     @GetMapping("complete/{userId}/{subjectId}")
-        public List<Complete> getHwCompletedByUserAndSubjectId(
-                @PathVariable int userId, @PathVariable Integer subjectId){
+    public List<Complete> getHwCompletedByUserAndSubjectId(
+            @PathVariable int userId, @PathVariable Integer subjectId) {
         return cs.getHwCompletedByUserAndSubjectId(userId, subjectId);
     }
+
     @PostMapping("complete")
-    public void addCompleteHw(@RequestBody Complete item){cs.addCompleteHw(item);}
+    public void addCompleteHw(@RequestBody Complete item) {
+        cs.addCompleteHw(item);
     }
+
+
+}
