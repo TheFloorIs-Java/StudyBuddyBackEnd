@@ -12,15 +12,18 @@ import javax.persistence.*;
 @Data
 @Entity
 @CrossOrigin
-public class Grades {
+public class Grade {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int gradeId;
+
     @Column
     public int userId;
+
     @Column
     public int subjectId;
+
     @Column
     public int grade;
 
