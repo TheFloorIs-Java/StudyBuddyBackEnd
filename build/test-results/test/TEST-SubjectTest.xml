@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SubjectTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-05T02:35:21" hostname="Harveens-MacBook-Pro-2.local" time="0.896">
-  <properties/>
-  <testcase name="findSubjectByIdTest()" classname="SubjectTest" time="0.89"/>
-  <testcase name="findSubjectByNameTest()" classname="SubjectTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
