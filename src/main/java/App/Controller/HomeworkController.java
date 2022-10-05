@@ -39,6 +39,10 @@ public class HomeworkController {
     public Homework HwByItemId(@PathVariable int itemId){
         return hs.getHwById(itemId);
     }
+    @GetMapping("homework/user/{userId}")
+    public List<Homework> HwByItemUserId(@PathVariable int userId){
+        return hs.getByUserId(userId);
+    }
 
 
 }

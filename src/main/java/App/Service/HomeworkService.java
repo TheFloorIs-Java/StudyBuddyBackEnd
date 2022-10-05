@@ -39,6 +39,9 @@ public class HomeworkService {
        cr.save(c);
        hr.deleteById(hwId);
     }
+    public List<Homework> getByUserId(int userId){
+        return hr.getHomeworkByUserId(userId);
+    }
 
     public Homework getHwById(int id){
         return hr.findByHwId(id);

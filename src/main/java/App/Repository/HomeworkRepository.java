@@ -17,4 +17,7 @@ public interface HomeworkRepository extends JpaRepository<Homework, Integer> {
     @Query("FROM Homework WHERE hwId= :hwId")
     public Homework findByHwId(@Param("hwId") int hwId);
 
+    @Query("FROM Homework WHERE userId = :userId")
+    public List<Homework> getHomeworkByUserId(@Param("userId") int userId);
+
 }
