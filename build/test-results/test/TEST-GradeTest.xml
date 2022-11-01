@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GradeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-05T18:47:03" hostname="Harveens-MacBook-Pro-2.local" time="1.218">
-  <properties/>
-  <testcase name="findGradesByUserIdTest()" classname="GradeTest" time="1.211"/>
-  <testcase name="findSubjectByNameTest()" classname="GradeTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
