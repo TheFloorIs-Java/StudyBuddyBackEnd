@@ -17,11 +17,19 @@ public class UserController {
         this.us = us;
     }
 
+    /**
+     * Get request to get all users
+     * @return list of users
+     */
     @GetMapping("users")
     public List<Users> getAllUsers(){
-        //System.out.println(us.allUsers());
         return us.allUsers();
     }
+
+    /**
+     * Post request to add a user
+     * @param u user
+     */
     @PostMapping("users")
     public void addUser(@RequestBody Users u){
         System.out.println(u.toString());

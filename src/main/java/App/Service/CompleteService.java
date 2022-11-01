@@ -11,12 +11,22 @@ import java.util.List;
 @CrossOrigin
 public class CompleteService {
     CompleteRepository cr;
-
     public CompleteService(CompleteRepository cr){
         this.cr = cr;
     }
-    List<Complete>completedhomework= new ArrayList<>();
+
+    /**
+     * Gets all completes for all users and subjects
+     * @return list of complete
+     */
     public List<Complete> getAllHwCompleted(){return cr.findAll();}
+
+    /**
+     * Gets all completed by user and subject while deleting extra
+     * @param userId id of user
+     * @param subjectId id of subject
+     * @return list of complete
+     */
     public List<Complete> getHwCompletedByUserAndSubjectId(int userId, int subjectId) {
          List<Complete> cList = cr.getHwCompletedByUserAndSubjectId(userId, subjectId);
         if(cList.size()>5){
@@ -24,11 +34,22 @@ public class CompleteService {
         }
         return cr.getHwCompletedByUserAndSubjectId(userId, subjectId);
     }
+
+    /**
+     * Adds new complete and checks size <=5
+     * @param item complete
+     */
     public void addCompleteHw(Complete item){
         cr.save(item);
-        cr.getHwCompletedByUserAndSubjectId(item.getUserId(), item.getSubjectId());
+        getHwCompletedByUserAndSubjectId(item.getUserId(), item.getSubjectId());
     }
 
+    /**
+     * Gets oldest id of complete to delete
+     * @param userId id of user
+     * @param subjectId id of subject
+     * @return complete id
+     */
     public int getOldestId(int userId, int subjectId){
         List<Complete> cList = cr.getHwCompletedByUserAndSubjectId(userId, subjectId);
         int currentMin=cList.get(0).completeId;

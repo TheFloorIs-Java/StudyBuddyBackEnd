@@ -25,7 +25,9 @@ public class GradeTest {
     @Mock
     GradeRepository gradeRepoMock;
 
-
+    /**
+     * Test find grades by user id method
+     */
     @Test
     public void findGradesByUserIdTest() {
         List<Grade> gradeSub = new ArrayList<Grade>();
@@ -34,8 +36,12 @@ public class GradeTest {
         Assert.assertThat("result", subTest, is(sameInstance(gradeSub)));
         Mockito.verify(gradeRepoMock).getGradesByUserId(1);
     }
+
+    /**
+     * Test find grade by user id and subject id method
+     */
     @Test
-    public void findSubjectByNameTest() {
+    public void findGradesByUserIdAndSubjectId() {
         Grade gradeSub = new Grade();
         Mockito.when(gradeRepoMock.getGradesByUserIdAndSubjectId(Mockito.anyInt(),Mockito.anyInt())).thenReturn(gradeSub);
         Grade subTest = gradeServiceMock.getGradesByUserIdAndSubjectId(1,1);

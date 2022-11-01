@@ -12,6 +12,9 @@ import javax.persistence.*;
 @Data
 @Entity
 @CrossOrigin
+/**
+ * Complete table with columns id, userid, subjectid, and completeItem
+ */
 public class Complete {
     @Id
     @Column

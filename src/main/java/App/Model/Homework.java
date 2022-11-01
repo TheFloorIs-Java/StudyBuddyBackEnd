@@ -12,6 +12,9 @@ import javax.persistence.*;
 @Data
 @Entity
 @CrossOrigin
+/**
+ * Homework table with columns hwid, userid, subjectid, and hwItem
+ */
 public class Homework {
     @Id
     @Column

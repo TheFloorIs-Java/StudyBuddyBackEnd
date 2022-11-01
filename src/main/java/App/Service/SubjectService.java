@@ -17,17 +17,36 @@ public class SubjectService {
         this.sr=sr;
     }
 
+    /**
+     * Adds subject to database
+     * @param s subject
+     */
     public void addSubject(Subjects s) {
         sr.save(s);
     }
+
+    /**
+     * Gets all subjects
+     * @return list of subject
+     */
     public List<Subjects> allSubjects(){
         return sr.findAll();
     }
 
+    /**
+     * Gets subjects by name
+     * @param name subject name
+     * @return subject
+     */
     public Subjects getSubjectByName(String name){
         return sr.findBySubjectName(name);
     }
 
+    /**
+     * Gets subject by id
+     * @param id subject id
+     * @return subject
+     */
     public Subjects getSubjectById(int id){
         return sr.findBySubjectId(id);
     }

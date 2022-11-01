@@ -14,6 +14,9 @@ import java.util.Date;
 @Data
 @Entity
 @CrossOrigin
+/**
+ * User table with columns userId, name, username, and password
+ */
 public class Users {
     @Id
     @Column

@@ -22,7 +22,9 @@ public class SubjectTest {
     @Mock
     SubjectRepository mockSubjectRepo;
 
-
+    /**
+     * Test find subject by subject id method
+     */
     @Test
     public void findSubjectByIdTest() {
         Subjects mathSub = new Subjects();
@@ -31,6 +33,10 @@ public class SubjectTest {
         Assert.assertThat("result", subTest, is(sameInstance(mathSub)));
         Mockito.verify(mockSubjectRepo).findBySubjectId(1);
     }
+
+    /**
+     * Test find subject by subject name method
+     */
     @Test
     public void findSubjectByNameTest() {
         Subjects mathSub = new Subjects();

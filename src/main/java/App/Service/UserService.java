@@ -17,9 +17,18 @@ public class UserService {
         this.ur=ur;
     }
 
+    /**
+     * Get all users from database
+     * @return list of users
+     */
     public List<Users> allUsers(){
         return ur.findAll();
     }
+
+    /**
+     * Add a user to database
+     * @param u user
+     */
     public void addUser(Users u){
         ur.save(u);
     }

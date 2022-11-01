@@ -11,13 +11,20 @@ import java.util.List;
 
 public interface GradeRepository extends JpaRepository <Grade, Integer> {
 
-   //FILTER BY USERID - This is used to grab data from the grade db by the userId to be displayed in the
-   // "Report-Card" component of the user profile.
+ /**
+  * Database query to get grades by user
+  * @param userId id of user
+  * @return list of grade
+  */
     @Query("FROM Grade WHERE userId= :userId")
     List<Grade> getGradesByUserId(@Param("userId") int userId);
 
-    //FILTER BY USERID + SUBJECTID - This is used to grab the gradeId from the grade db by the userId and subjectId,
-    // this is necessary for the update function.
+  /**
+  * Database query to get grades by user and subject
+  * @param userId id of user
+  * @param subjectId id of subject
+  *  @return list of grade
+  */
     @Query("FROM Grade WHERE userId= :userId AND subjectId= :subjectId")
     Grade getGradesByUserIdAndSubjectId(@Param("userId") int userId, @Param("subjectId")int subjectId);
 }

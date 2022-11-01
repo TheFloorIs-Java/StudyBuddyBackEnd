@@ -25,7 +25,9 @@ public class HomeworkTest {
     @Mock
     HomeworkRepository mockHomeworkRepository;
 
-
+    /**
+     * Test find homework by id method
+     */
     @Test
     public void findHomeworkByHwIdTest() {
         Homework homeSub = new Homework();
@@ -34,6 +36,10 @@ public class HomeworkTest {
         Assert.assertThat("result", homeworkTest, is(sameInstance(homeSub)));
         Mockito.verify(mockHomeworkRepository).findByHwId(1);
     }
+
+    /**
+     * Test find homework by subject id and user id method
+     */
     @Test
     public void findHomeworkBySubjectIdAndUserIdTest() {
         List<Homework> homeSubsList = new ArrayList<Homework>();

@@ -14,6 +14,9 @@ import javax.persistence.Id;
 @Data
 @Entity
 @CrossOrigin
+/**
+ * Subject table with columns subjectId, subjectName, and tips
+ */
 public class Subjects {
     @Id
     @Column

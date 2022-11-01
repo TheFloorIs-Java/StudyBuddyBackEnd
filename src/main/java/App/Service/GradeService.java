@@ -16,22 +16,38 @@ public class GradeService {
         this.gradeRepository = gradeRepository;
     }
 
-    //LIST ALL GRADES
+    /**
+     * Gets all the grades for all users and grades
+     * @return list of grade
+     */
     public List<Grade> getAllGrades() {
         return gradeRepository.findAll();
     }
 
-    //LIST ALL GRADES BY userId
+    /**
+     * Gets all grades by user
+     * @param userId id of user
+     * @return list of grade
+     */
     public List<Grade> getGradesByUserId(int userId) {
         return gradeRepository.getGradesByUserId(userId);
     }
 
-    //LIST ALL GRADES BY userId + subjectId
+    /**
+     * Gets grade by user and subject
+     * @param userId id of user
+     * @param subjectId id of subject
+     * @return grade
+     */
     public Grade getGradesByUserIdAndSubjectId(int userId, int subjectId) {
         return gradeRepository.getGradesByUserIdAndSubjectId(userId, subjectId);
     }
 
-    //POST - ADD NEW GRADE
+    /**
+     * Adds a new grade
+     * @param grade grade to be added
+     * @return added grade or error
+     */
     public Grade addGrade(Grade grade) {
         //CHECKING TO SEE IF THE subjectId ALREADY EXISTS FOR THIS userId, IF IT DOES THE GRADE WILL NOT BE ADDED
         Grade existingGrade = gradeRepository.getGradesByUserIdAndSubjectId(grade.userId, grade.subjectId);
@@ -42,12 +58,19 @@ public class GradeService {
         return existingGrade;
     }
 
-    //UPDATE GRADE FOR PUT
+    /**
+     * Updates grade in database
+     * @param grade grade to update
+     * @return updated grade or error
+     */
     public Grade updateGrade(Grade grade){
         return gradeRepository.save(grade);
     }
 
-    //DELETE GRADE BY gradeId - NOT USED
+    /**
+     * Deletes grade by id
+     * @param gradeId id of grade
+     */
     public void deleteGradeByGradeId(int gradeId) {
         gradeRepository.deleteById(gradeId);
     }

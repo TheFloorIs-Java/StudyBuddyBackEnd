@@ -2,16 +2,21 @@ package App.Repository;
 
 import App.Model.Subjects;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+
 
 public interface SubjectRepository extends JpaRepository<Subjects, Integer> {
 
-//    @Query("FROM Subjects WHERE subjectName= :subjectName")
-//    public Subjects findBySubjectNameIs(@Param("subjectName")String subjectName);
-    public Subjects findBySubjectName(String subjectName);
-//    @Query("FROM Subjects WHERE subjectId= :subjectId")
-//    public Subjects findById(@Param("subjectId")int subjectId);
+    /**
+     * Database query to find subject by name
+     * @param name subject name
+     * @return subject
+     */
+    Subjects findBySubjectName(String name);
 
-    public Subjects findBySubjectId(int subjectId);
+    /**
+     * Database query to find subject by id
+     * @param id subject id
+     * @return subject
+     */
+    Subjects findBySubjectId(int id);
 }

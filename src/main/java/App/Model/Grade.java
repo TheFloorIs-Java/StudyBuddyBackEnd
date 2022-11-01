@@ -12,6 +12,9 @@ import javax.persistence.*;
 @Data
 @Entity
 @CrossOrigin
+/**
+ * Grade table with columns id, userid, subjectid, and grade
+ */
 public class Grade {
     @Id
     @Column
